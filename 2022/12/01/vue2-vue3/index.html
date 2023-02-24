@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Peng"><title>Vue2和Vue3的区别 · Peng'Blog</title><meta name="description" content="1、 Vue2.0 和 Vue3.0 有什么区别？
+响应式系统的重新配置，使用代理替换对象.define属性，使用代理优势：
+
+
+可直接监控阵列类型的数据变化
+
+监听的目标是对象本身，不需要像Object.defineProperty那样遍历每个属性，有一定的性能提升
+
+可拦截应用、拥有密钥、有等1"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/avatar.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">首页</a></li><li> <a href="/archives">归档</a></li><li> <a href="/tags">标签</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/avatar.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/avatar.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">Peng'Blog</a></h3><div class="description"><p>Welcome to my blog</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/AnderPeng"><i class="fa fa-github"></i></a></li><li><a href="mailto:365520067@qq.com"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="http://sighttp.qq.com/authd?IDKEY=365520067"><i class="fa fa-qq"></i></a></li></ul></div></div><div class="footer"><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Vue2和Vue3的区别</a></h3></div><div class="post-content"><p><h3 id="1、-Vue2-0-和-Vue3-0-有什么区别？"><a href="#1、-Vue2-0-和-Vue3-0-有什么区别？" class="headerlink" title="1、 Vue2.0 和 Vue3.0 有什么区别？"></a>1、 Vue2.0 和 Vue3.0 有什么区别？</h3><ol>
+<li>响应式系统的重新配置，使用代理替换对象.define属性，使用代理优势：</li>
+</ol>
+<ul>
+<li><p>可直接监控阵列类型的数据变化</p>
+</li>
+<li><p>监听的目标是对象本身，不需要像Object.defineProperty那样遍历每个属性，有一定的性能提升</p>
+</li>
+<li><p>可拦截应用、拥有密钥、有等13种方法，以及Object.define属性没有办法</p>
+</li>
+<li><p>直接添加对象属性&#x2F;删除</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>新增组合API，更好的逻辑重用和代码组织</p>
+</li>
+<li><p>重构虚拟 DOM</p>
+</li>
+</ol>
+<ul>
+<li><p>模板编译时间优化，将一些静态节点编译成常量</p>
+</li>
+<li><p>slot优化，采取槽编译成懒人功能，拿槽渲染的决定留给子组件</p>
+</li>
+<li><p>在模板中提取和重用内联事件（最初，每次渲染时都会重新生成内联函数）</p>
+</li>
+</ul>
+<ol start="4">
+<li><p>代码结构调整，更方便树摇动，使其更小</p>
+</li>
+<li><p>使用打字脚本替换流</p>
+</li>
+</ol>
+<h3 id="2、Vue3带来了什么改变？"><a href="#2、Vue3带来了什么改变？" class="headerlink" title="2、Vue3带来了什么改变？"></a>2、Vue3带来了什么改变？</h3><ol>
+<li>性能的提升</li>
+</ol>
+<ul>
+<li><p>打包大小减少41%</p>
+</li>
+<li><p>初次渲染快55%, 更新渲染快133%</p>
+</li>
+<li><p>内存减少54%</p>
+</li>
+</ul>
+<ol start="2">
+<li>源码的升级</li>
+</ol>
+<ul>
+<li><p>使用Proxy代替<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=defineProperty&spm=1001.2101.3001.7020">defineProperty</a>实现响应式</p>
+</li>
+<li><p>重写<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%99%9A%E6%8B%9FDOM&spm=1001.2101.3001.7020">虚拟DOM</a>的实现和Tree-Shaking</p>
+</li>
+</ul>
+<ol start="3">
+<li>拥抱TypeScript</li>
+</ol>
+<ul>
+<li>Vue3可以更好的支持TypeScript</li>
+</ul>
+</p><div class="tip">本文采用CC-BY-SA-3.0协议，转载请注明出处<br>作者: Peng</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-12-01</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Vue/" title="Vue">Vue </a><span class="leancloud_visitors"></span><span>大约332个字, 1分钟6秒读完</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/12/01/vue2-vue3/,Peng'Blog,Vue2和Vue3的区别,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/02/05/wx-login/" title="PC端微信扫码登录(二维码内嵌)">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/11/11/next3-arcoDesign/" title="Nuxt3搭建官网">下一篇</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"页面",CATEGORIES:"分类",TAGS:"标签",UNTITLED:"(无标题)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
